@@ -4,18 +4,27 @@ body{
     padding: 0;
     margin: 0;
 display: flex;
+/* flex-direction: column; */
 justify-content: center;
 align-items: center;
 }
 #main-cont{
-   
     background-color: rgb(41, 39, 39);
-    height: auto;
-    width: 30%;
+    /* height: 100%; */
+    flex: 0.5;
+    /* width: 55%; */
     border-radius: 10px;
     /* border: 2px solid yellow; */
     /* padding-left:8%; */
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
+}
+#main-cont-child{
+    width: 99%;
+    height: 99%;
+    /* background-color: #8ac642; */
+    display: flex;
+   
 }
 h1{
    text-align: center;
@@ -23,10 +32,26 @@ h1{
     /* font-family:Verdana, Geneva, Tahoma, sans-serif ; */
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+#reg-form{
+    height: 50%;
+    width: 50%;
+}
 
 #log-form{
-  padding-left:16% ;
-  display: none;
+    /* background-color: aqua; */
+    width: 40%;
+    height: 50%;
+    position: relative;
+    top: 20px;
+    left: 5%;
+    /* flex-wrap: wrap; */
+    /* border-left: 1px solid #fff; */
+}
+#log-form h4{
+    color: #fff;
+    position: relative;
+    left: 25px;
+
 }
 
 .input-p{
@@ -58,6 +83,9 @@ border-bottom: 1px solid #fff;
     left: 24%;
 }
  
+#log-form hr{
+    width: 83%;
+}
 hr{
     /* color: #fff; */
 background-color: #fff;
@@ -83,7 +111,7 @@ input[type="password"]{
     left: 8%;
 }
 .input-p1 input{
-    width:80%;
+    width:100%;
     height: 40px;
     background-color: transparent;
 /* border-radius:5px; */
@@ -93,7 +121,7 @@ border-bottom: 1px solid #fff;
 
   }  
   #Login-user{
-    width: 35%;
+    width: 50%;
     height: 60%;
     border-radius: 5px;
     border: none;
@@ -101,8 +129,9 @@ border-bottom: 1px solid #fff;
     background-color: #fff;
     color: black;
     position: relative;
-    left: 18%;
+    left: 32%;
   }
+  
 
   
   /* body{
@@ -116,15 +145,16 @@ border-bottom: 1px solid #fff;
 } */
 #main-card {
     position: relative;
-    left: 16%;
-    width: 68%;
-    height: 100%;
+    /* left: 16%; */
+    width:32%;
+    height: 95%;
     /* background-color: aqua; */
     border: 1px solid #0873b9;
+    
 }
 .card-child{
-    /* width: 100%; */
-    height: 35%;
+    width: 100%;
+    height: 32%;
     /* background-color: bisque; */
      display: flex;
     justify-content: center; 
@@ -132,7 +162,7 @@ border-bottom: 1px solid #fff;
 }
 .card-child img{
  width: 70%;
- height: 120%;
+ height: 130%;
 }
 .print-data{
     /* width: 100%; */
@@ -174,18 +204,71 @@ border-bottom: 1px solid #fff;
     height: 18%;
     border-bottom: 1px solid #8ac642;
 }
-#main-card{
-    display: none;
-}
+
 #name h1{
     /* display: flex; */
     position: relative;
-    top:20px;
+    top:40px;
     color:rgb(62, 52, 52) ;
+    font-size: 2vw;
+
 }
 h6{
     color:rgb(62, 52, 52) ;
     position: relative;
     top: 20px;
+    font-size: 1.3vw;
 }
+.logout{
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 14%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+}
+.logout button{
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    width: 30%;
+    background-color: #8ac642;
+}
+
+#main-card2 {
+    /* position: relative;
+    left: 16%; */
+    width: 68%;
+    height: 100%;
+    /* background-color: aqua; */
+    border: 1px solid #0873b9;
+}
+
+#container2{
+    width: 70%;
+    height:80%;
+    background-color: wheat;
+   /* display: inline; */
+    display: flex;
+}
+#container2{
+    display: none;  
+}
+#cont2-child{
+    display: flex;
+    width: 98%;
+    height: 98%;
+    background-color: aquamarine;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+#use{
+    width:20% ;
+    height:80%;
+    background-color: #fff!important;
+   
+}
+
 

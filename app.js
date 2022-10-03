@@ -1,4 +1,5 @@
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
   import { getAuth, 
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword
@@ -8,7 +9,11 @@
  import { doc,
    setDoc,
    getDoc,
-   getFirestore
+   getFirestore,
+   collection,
+  query,
+  where,
+  getDocs,
    } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 
@@ -99,7 +104,7 @@ login.addEventListener("click",function(){
 
 if (docSnap.exists()) {
   console.log("User Data:", docSnap.data());
-
+// let get = docSnap.data()
 let name_user = document.getElementById('name')
 name_user.innerHTML = `<h1>${docSnap.data().name}</h1>`
 
@@ -113,19 +118,20 @@ let  email_user = document.getElementById('email')
 email_user.innerHTML = `<h6>${docSnap.data().email}</h6>`
 
 
-
-  let btn1 = document.getElementById('main-card')
+    let btn1 = document.getElementById('container2')
     btn1.style.display = 'block'
-    let btn = document.getElementById('log-form')
+    let btn = document.getElementById('main-cont')
     btn.style.display = 'none'
     let cont = document.getElementById('main-cont')
     cont.style.height ='65%' 
     let cont1 = document.getElementById('main-cont')
     cont1.style.backgroundColor = '#ffff'
-    // cont.style.border = '1px solid #0873b9'
+   
+    let user = document.getElementById('users')
+    user.innerHTML = `${docSnap.data().name}`
 
-
-} else {
+    // getAllUsers(docSnap.data().email, docSnap.data().name);
+} else{
   console.log("No such document!");
 }
 
@@ -137,6 +143,31 @@ email_user.innerHTML = `<h6>${docSnap.data().email}</h6>`
       console.log(error);
     });
 
-
+//     const getAllUsers = async (email, currentId, currentName) => {
+//       const q = query(collection(db, "users"), where("email", "!=", email));
+//       const querySnapshot = await getDocs(q);
+//       let users = document.getElementById("users");
+//       querySnapshot.forEach((doc) => {
+//         users.innerHTML += `<li>${doc.data().name} <button onclick='startChat id="chat-btn">Start Chat</button></li>`;
+//       });
+//     };
 })
+
+let log_out=()=>{
+  console.log("helloe");
+  let main_card = document.getElementById('container2')
+  main_card.style.display = 'none'
+  let main_cont = document.getElementById('main-cont')
+  main_cont.style.display = 'block'
+  let main_cont1 = document.getElementById('main-cont')
+  main_cont1.style.backgroundColor='rgb(41, 39, 39)'
+  let cont2 = document.getElementById('main-cont')
+  cont2.style.height ='85%' 
+
+  let pas = document.getElementById('login-pass')
+pas.value = ""
+  }
+window.log_out = log_out
+
+
  
