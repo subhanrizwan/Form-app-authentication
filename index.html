@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body  >
+       
     <div id="main-cont">
 <div id="main-cont-child">
     <div id="reg-form">
@@ -30,9 +31,15 @@
             <input type="password" id="reg-pass" placeholder="password">
         </div>
         <div class="input-p">
-            <button id="Register">Register</button>
+            <input type="file" id="reg-file" >
+            <!-- <button id="upload">upload</button> -->
         </div>
-    <!-- </form> -->
+        <div class="input-p">
+            <button id="Register">Register</button>
+            <div id="loader-reg">
+                <img src="./images/loadingtwo.gif" >
+            </div>
+        </div>
     </div>
 
 
@@ -45,20 +52,22 @@
         <input type="password" id="login-pass"  placeholder="Confirm password"><br>  
      </div>
        <div class="input-p1" id="pass">
-        <button id="Login-user">Login</button>
+        <button type="submit" id="Login-user">Login</button>
        </div>
     </div>
 </div>
 
-  
             
 </div>
-
+<!--  -->
 <div id="container2">
     <div id="cont2-child">
 <div id="main-card">
     <div class="card-child">
-      <img src="./images/smit-logo.png" alt="">
+      <!-- <img src="./images/smit-logo.png" > -->
+      <div class="pro-img">
+        <img src="" id="profile" >
+    </div>
     </div>
     <div class="print-data">
     <div id="name"></div>
@@ -66,21 +75,25 @@
     <div id="p-num"></div>
     <div id="email"></div>
     <div class="logout">
-        <button onclick="log_out()">Log Out</button>
+        <button id="log_out"><p id="log_out">Logout</p> </button>
+        <!-- <div id="loader2"><img src="." ></div> -->
     </div>
     </div>
     </div>
-
+<!-- 
     <div id="use">
         <ul id="users">
             
         </ul>
-    
+     -->
     </div>
 </div>
 
 
 </div>
+
+
+
 
 
     
@@ -91,11 +104,10 @@
 
         </div>
 
-
-
-
+        <div id="loader"> <img src="./images/loadingtwo.gif" ></div>
 
 </body>
 <script src="app.js" type="module"></script>
+<!-- <script src="card.js" ></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>
