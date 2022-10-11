@@ -81,8 +81,14 @@ reg.addEventListener("click", function () {
  
   createUserWithEmailAndPassword(auth, email.value, pass.value)
     .then(async (userCredential) => {
+
       let load =document.getElementById('loader-reg')
       load.style.display = 'block'
+      let disab = document.getElementById('Register')
+      disab.style.display = 'none' 
+      let load1 = document.getElementById('img_Reg')
+      load1.style.marginTop = '25px'
+
       // Signed in 
       const user = userCredential.user;
       //     console.log("Registered");   
@@ -139,6 +145,8 @@ reg.addEventListener("click", function () {
 
             let load_reg = document.getElementById('loader-reg')
             load_reg.style.display = 'none'
+            let disab = document.getElementById('Register')
+            disab.style.display = 'block' 
 
             swal("Registered","you have registered", "success");
 
@@ -159,6 +167,14 @@ reg.addEventListener("click", function () {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log("error", error);
+
+      setTimeout(()=>{
+        let load_reg1 = document.getElementById('loader-reg')
+        load_reg1.style.display = 'none'
+      },2000)
+      // let load_reg1 = document.getElementById('loader-reg')
+      // load_reg1.style.display = 'none'
+      swal("Sorry!","Email Already use!", "error");
       // ..
     });
 
@@ -240,6 +256,9 @@ login.addEventListener("click", function () {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(error);
+      // if(!docSnap.exists){
+        swal("Sorry!","User Not Found!", "error");
+      // }
     });
 
 
